@@ -1,5 +1,15 @@
 # StepZen GraphQL Benchmark
 
+Performance is an important issue for APIs that drive user experiences. It's well understood that user engagement with an application drops quickly with increases in latency. Real-world workloads run in chaotic environments, and force both the best and the problematic parts of a system. So the ability to measure the performance of your system is important. This GraphQL Benchmark tool will help you do just that.
+
+When you measure performance, measure it using a:
+
+- Workload that is near realistic.
+- On a production system, and not on something set aside for testing.
+- Regularly, and compare the performance you got to what you are getting.
+
+Make sure you know the reasons for any significant differences you see. For more reasons why you should test your system, have a look at [this article about measuring performance](performance-measuring-latency-throughput-graphql).
+
 ## Getting started
 
 Clone the files in this repository to your local machine.
