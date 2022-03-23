@@ -199,3 +199,48 @@ const stepzenLight = {
 ```
 
 Make sure to set the `weight` for `stepzenLight` to `1` after filling in your StepZen GraphQL API endpoint and inserting a query for this endpoint. You could repeat the same steps for `stepzenHeavy` if you want to test more complex queries that send requests to multiple data sources or contain heavily nested fields.
+
+## Tricks
+
+### Passing in your StepZen API key and endpoint
+
+Instead of hard coding your endpoint or api keys in the targets file you can use `k6` environment variables.
+Here `ENDPOINT` and `API_KEY` are used to set the values:
+
+```
+const stepzenLight = {
+  method: 'POST',
+  endpoint: __ENV.ENDPOINT,
+  counterName: 'stepzenLight',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'apikey ' + __ENV.API_KEY,
+  },
+  body: JSON.stringify({
+    query: `
+      query MyQuery {
+        // INSERT_YOUR_OWN_QUERY
+      }
+    `,
+  }),
+};
+```
+
+and then run as (MacOS/Linux):
+
+```
+k6 run --vus 10 --duration 30s \
+   -e ENDPOINT='https://xxxx.stepzen.net/api/innocent-mite/__graphql'
+   -e API_KEY=`stepzen whoami --apikey` \
+   driver.js
+```
+
+### Checking a target
+
+You can use `--http-debug="full"` to manually check the request and response are as expected.
+This works best with one VU and one iteration, the default for `k6`. In addition ensure that
+the target you want to check has a selection weight of `1` and `0` for all others.
+
+```
+k6 run --http-debug="full" driver.js
+```
