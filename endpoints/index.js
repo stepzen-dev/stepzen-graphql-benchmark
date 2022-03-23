@@ -27,10 +27,11 @@ const stepzenVersion = {
 // In example a query that calls just one data source and contains no nested fields
 const stepzenLight = {
   method: 'POST',
-  endpoint: 'REPLACE_WITH_YOUR_OWN_STEPZEN_ENDPOINT',
+  endpoint: 'REPLACE_WITH_YOUR_STEPZEN_ENDPOINT',
   counterName: 'stepzenLight',
   headers: {
     'Content-Type': 'application/json',
+    'Authorization': 'apikey REPLACE_WITH_YOUR_STEPZEN_API_KEY'
   },
   body: JSON.stringify({
     query: `
@@ -45,10 +46,11 @@ const stepzenLight = {
 // In example a query that needs to call multiple data sources and contains heavily nested fields
 const stepzenHeavy = {
   method: 'POST',
-  endpoint: 'REPLACE_WITH_YOUR_OWN_STEPZEN_ENDPOINT',
+  endpoint: 'REPLACE_WITH_YOUR_STEPZEN_ENDPOINT',
   counterName: 'stepzenHeavy',
   headers: {
     'Content-Type': 'application/json',
+    'Authorization': 'apikey REPLACE_WITH_YOUR_STEPZEN_API_KEY'
   },
   body: JSON.stringify({
     query: `
