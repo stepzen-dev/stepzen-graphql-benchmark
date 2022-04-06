@@ -8,7 +8,7 @@ When you measure performance, measure it using a:
 - On a production system, and not on something set aside for testing.
 - Regularly, and compare the performance you got to what you are getting.
 
-Make sure you know the reasons for any significant differences you see. For more reasons why you should test your system, have a look at [this article about measuring performance](performance-measuring-latency-throughput-graphql).
+Make sure you know the reasons for any significant differences you see. For more reasons why you should test your system, have a look at [this article about measuring performance](https://stepzen.com/blog/performance-measuring-latency-throughput-graphql).
 
 ## Getting started
 
