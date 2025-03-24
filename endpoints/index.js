@@ -19,7 +19,7 @@ const httpbin = {
 // Test the endpoint that returns the current version of StepZen
 const stepzenVersion = {
   method: 'GET',
-  endpoint: 'https://test.stepzen.net/version',
+  endpoint: 'https://test.us-east-a.ibm.stepzen.net/version',
   counterName: 'stepzenversion',
 };
 

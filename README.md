@@ -230,7 +230,7 @@ and then run as (MacOS/Linux):
 
 ```
 k6 run --vus 10 --duration 30s \
-   -e ENDPOINT='https://xxxx.stepzen.net/api/innocent-mite/__graphql' \
+   -e ENDPOINT='https://xxxx.ibm.stepzen.net/api/innocent-mite/__graphql' \
    -e API_KEY=`stepzen whoami --apikey` \
    driver.js
 ```
